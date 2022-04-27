@@ -1,0 +1,43 @@
+# CircleCI 2.0 configuration file
+version: 2.0
+jobs:
+  build:
+    steps:
+      - checkout
+
+      - run:
+          name: Installing requirements
+          command: |
+            # Update pip and wheel.
+            python -m pip install --progress-bar off --user --upgrade pip wheel
+
+            # Install requirements.
+            pip install --use-deprecated=legacy-resolver --progress-bar off --user -r ./requirements/test.txt
+
+            # Install and update npm.
+            npm install
+            npm update
+
+            # Build.
+            npm run build
+
+      # Create the folder for test results.
+      - run:
+          name: Creating folders for test results
+          command: mkdir -p test-results/artifacts
+
+      # Run tests.
+      - run:
+          name: Running tests
+          command: |
+            make lint
+            make test
+
+      # Store test results and artifacts.
+      - store_test_results:
+          name: Storing test results
+          path: test-results
+      - store_artifacts:
+          name: Storing test artifacts
+          path: test-results
+          destination: artifacts
