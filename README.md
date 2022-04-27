@@ -2,7 +2,7 @@
 
 Bind HTML adds declarative data binding for HTML attributes.
 
-![Python 3.6+](https://img.shields.io/badge/python-3.6%2B-blue)
+![Python 3.6+](https://img.shields.io/badge/python-3.6%2B-blue) [![CircleCI](https://circleci.com/gh/BringFido/bind-html/tree/main.svg?style=svg)](https://circleci.com/gh/BringFido/bind-html/tree/main)
 
 ## Testing, etc.
 
