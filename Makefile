@@ -33,7 +33,7 @@ format:
 
 lint:
 	@echo "Checking for Python formatting issues which can be fixed automatically..."
-	@black . --experimental-string-processing --line-length 99 --target-version py38 --check --quiet || (printf 'Found files which need to be auto-formatted. Run \e[1mmake format\e[0m and re-lint.\n'; exit 1)
+	@black . --preview --line-length 99 --target-version py38 --check --quiet || (printf 'Found files which need to be auto-formatted. Run \e[1mmake format\e[0m and re-lint.\n'; exit 1)
 	@isort . --check --quiet || (printf 'Found files which need to be auto-formatted. Run \e[1mmake format\e[0m and re-lint.\n'; exit 1)
 	@echo "...done. No issues found."
 
@@ -45,7 +45,7 @@ lint:
 test:
 	find . -name "*.pyc" -delete
 	coverage erase
-	coverage run --source=data_enum -m pytest --ignore=bin --ignore=lib --ignore=dist --ignore=prof --ignore=build
+	coverage run --source=bind_html -m pytest --ignore=bin --ignore=lib --ignore=dist --ignore=prof --ignore=build
 	coverage report -m --fail-under 90
 
 install:
