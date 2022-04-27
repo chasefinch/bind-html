@@ -2,6 +2,9 @@
 version: 2.0
 jobs:
   build:
+    docker:
+      - image: cimg/python:3.8 # primary container - where job steps
+
     steps:
       - checkout
 
