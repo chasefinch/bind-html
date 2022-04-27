@@ -17,13 +17,6 @@ jobs:
             # Install requirements.
             pip install --use-deprecated=legacy-resolver --progress-bar off --user -r ./requirements/test.txt
 
-            # Install and update npm.
-            npm install
-            npm update
-
-            # Build.
-            npm run build
-
       # Create the folder for test results.
       - run:
           name: Creating folders for test results
