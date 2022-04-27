@@ -1,0 +1,9 @@
+
+*.pyc
+.coverage
+build/
+prof/
+dist/
+bin/
+lib/
+pyvenv.cfg
