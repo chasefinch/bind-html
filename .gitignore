@@ -7,3 +7,4 @@ dist/
 bin/
 lib/
 pyvenv.cfg
+bind_html.egg-info/
