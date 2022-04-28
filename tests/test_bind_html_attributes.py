@@ -1,6 +1,6 @@
 """Tests for HTMLAttributeBinder and related functionality."""
 
-# Python Bind HTML
+# Bind HTML
 from bind_html import HTMLAttributeBinder
 
 
