@@ -46,11 +46,11 @@ class HTMLAttributeBinder(HTMLParser):
         """Process an HTML comment."""
         self._result.append(f"<!--{comment}-->")
 
-    def apply(self, amp_html):
+    def apply(self, html):
         """Run the server-side-rendering routine."""
         self.reset()
 
-        self.feed(amp_html)
+        self.feed(html)
         self.close()
 
         return "".join(self._result)
