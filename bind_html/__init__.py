@@ -22,14 +22,14 @@ class HTMLAttributeBinder(HTMLParser):
 
     def handle_decl(self, decl):
         """Process a declaration string."""
-        self._result.append(decl)
+        self._result.append(f"<!{decl}>")
 
     def handle_starttag(self, tag, attrs):
-        self._result.append(f"<{self.get_starttag_text()}>")
+        self._result.append(f"{self.get_starttag_text()}")
         """Process a start tag."""
 
     def handle_endtag(self, tag):
-        self._result.append(f"</tag>")
+        self._result.append(f"</{tag}>")
         """Process a closing tag."""
 
     def handle_data(self, html_data):
