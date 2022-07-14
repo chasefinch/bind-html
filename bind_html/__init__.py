@@ -25,9 +25,11 @@ class HTMLAttributeBinder(HTMLParser):
         self._result.append(decl)
 
     def handle_starttag(self, tag, attrs):
+        self._result.append(f"<{self.get_starttag_text()}>")
         """Process a start tag."""
 
     def handle_endtag(self, tag):
+        self._result.append(f"</tag>")
         """Process a closing tag."""
 
     def handle_data(self, html_data):
