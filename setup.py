@@ -11,7 +11,7 @@ setuptools.setup(
     version="1.0a4",
     author="Chase Finch",
     author_email="chase@finch.email",
-    description="Declarative data binding for HTML attributes",
+    description="Declarative data binding for HTML",
     keywords=["HTML", "data binding"],
     long_description=long_description,
     long_description_content_type="text/markdown",
