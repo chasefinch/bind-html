@@ -8,7 +8,7 @@ with open("README.md", "r") as readme_file:
 
 setuptools.setup(
     name="bind-html",
-    version="1.0a4",
+    version="1.0a5",
     author="Chase Finch",
     author_email="chase@finch.email",
     description="Declarative data binding for HTML",

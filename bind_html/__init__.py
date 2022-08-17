@@ -37,7 +37,22 @@ class HTMLDataBinder(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         """Process a start tag."""
-        self._result.append(f"{self.get_starttag_text()}")
+        # Turn attribute data in to strings
+        attr_strings = []
+        for attr in attrs:
+            attr_name = attr[0]
+            if attr[1] is not None:
+                value = str(attr[1])
+                if self.should_trim_attrs:
+                    value = value.strip()
+                value = value.replace('"', "&quot;")
+                attr_strings.append(f' {attr_name}="{value}"')
+            else:
+                attr_strings.append(f" {attr_name}")
+
+        attr_string = "".join(attr_strings)
+
+        self._result.append(f"<{tag}{attr_string}>")
 
     def handle_endtag(self, tag):
         """Process a closing tag."""
