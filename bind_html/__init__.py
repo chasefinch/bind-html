@@ -43,8 +43,6 @@ class HTMLDataBinder(HTMLParser):
             attr_name = attr[0]
             if attr[1] is not None:
                 value = str(attr[1])
-                if self.should_trim_attrs:
-                    value = value.strip()
                 value = value.replace('"', "&quot;")
                 attr_strings.append(f' {attr_name}="{value}"')
             else:
