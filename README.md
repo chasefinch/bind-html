@@ -1,4 +1,4 @@
-***This is an experimental project with no releases. Don't use it yet.***
+***This is an experimental project with no releases. Don’t use it yet.***
 
 # Bind HTML
 
